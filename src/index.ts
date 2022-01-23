@@ -1,6 +1,6 @@
-import { Board } from './Board';
+import { Board } from './dist/Board';
 
-export { Board } from './Board';
+export { Board } from './dist/Board';
 
 export default {
   Board,
