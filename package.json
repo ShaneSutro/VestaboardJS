@@ -2,7 +2,7 @@
   "name": "vestaboard",
   "version": "0.1.1",
   "description": "A lightweight wrapper for the Vestaboard API",
-  "main": "./build/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "ts-mocha tests/**/*.test.ts",

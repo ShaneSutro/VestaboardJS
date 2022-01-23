@@ -4,7 +4,7 @@
     "module": "commonjs",
     "strict": true,
     "declaration": true,
-    "outDir": "./build"
+    "outDir": "./dist"
   },
   "exclude": [
       "tests",
