@@ -1,18 +1,11 @@
+import vestaboard from '../src/index';
+import { expect } from 'chai';
 
-import { add } from "../src/index";
-import { expect } from "chai";
-
-describe("add-demo-npm unit tests", (): void => {
-    it("adding two positive numbers", (): void => {
-        const actual: number = add(1,2);
-        expect(actual).is.equal(3);
-    });
-    it("adding two negative numbers", (): void => {
-        const actual: number = add(-5,-2);
-        expect(actual).is.equal(-7);
-    });
-    it("adding one positive and one negative number", (): void => {
-        const actual: number = add(7,-2);
-        expect(actual).is.equal(5);
-    });
+describe('Board class', (): void => {
+  it('instantiates a new class', (): void => {
+    const board = new vestaboard.Board('key', 'secret', 'subId');
+    expect(board.apiKey).to.equal('key');
+    expect(board.apiSecret).to.equal('secret');
+    expect(board.subscriptionId).to.equal('subId');
+  });
 });

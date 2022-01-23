@@ -7,7 +7,8 @@
     "build": "tsc",
     "test": "ts-mocha tests/**/*.test.ts",
     "coverage": "nyc npm test",
-    "lint": "eslint \"**\\*.ts\""
+    "lint": "eslint \"**\\*.ts\"",
+    "dev": "tsc --watch"
   },
   "files": [
     "dist",
@@ -40,5 +41,8 @@
     "nyc": "^15.1.0",
     "ts-mocha": "^9.0.2",
     "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "axios": "^0.25.0"
   }
 }

@@ -22,7 +22,7 @@
       "linebreak-style": "off",
       "quotes": [
           "error",
-          "double",
+          "single",
           { "allowTemplateLiterals": true }
       ],
       "keyword-spacing": ["error", { "before": true }],
