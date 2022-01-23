@@ -1,6 +1,6 @@
 {
   "name": "vestaboard",
-  "version": "0.1.0",
+  "version": "0.1.1-0",
   "description": "A lightweight wrapper for the Vestaboard API",
   "main": "index.js",
   "scripts": {
