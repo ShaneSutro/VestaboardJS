@@ -1,3 +1,7 @@
-export function add(a: number, b: number): number{
-  return a + b;
-}
+import { Board } from './Board';
+
+export { Board } from './Board';
+
+export default {
+  Board,
+};
