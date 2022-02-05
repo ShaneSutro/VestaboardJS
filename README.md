@@ -50,7 +50,7 @@ Once created, you will need to store your API Key and API Secret - you'll need t
 
 `npm install vestaboard`
 
-#### Usage
+<!-- #### Usage
 
 This package will simplify the process of connecting your code to Vestaboard's API.
 By default, the module will store your API Key, API Secret, and Subscriber ID in a .txt file in the root folder of the project.
@@ -224,7 +224,7 @@ Formatter().convertLine('Happy Birthday!')
 
 - Conversion from string to list of lists for `.raw()` method
 - Unit and other tests inside the `/test` folder
-- Suggestions or ideas for improvement are always welcome!
+- Suggestions or ideas for improvement are always welcome! -->
 
 Interested in contributing to this project? Send a PR with changes and I'd be happy to review! If you're having trouble with this library, be sure to [open an issue][] so that I can look into the problem. Any details that can be provided alongside the problem would be greatly appreciated.
 Thanks!
