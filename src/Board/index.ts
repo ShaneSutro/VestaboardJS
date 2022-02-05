@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Formatter } from '../Formatter';
-import { Installable } from '../shared/types';
+import { InstallableClass as Installable } from '../Installable/index';
 import { post as postURL } from '../shared/url';
 
 export class Board {
