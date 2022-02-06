@@ -218,13 +218,14 @@ Formatter().convertLine('Happy Birthday!')
 
 ---
 
-## Repository Info and Disclaimers
 
 ### Needs
 
 - Conversion from string to list of lists for `.raw()` method
 - Unit and other tests inside the `/test` folder
 - Suggestions or ideas for improvement are always welcome! -->
+
+## Repository Info and Disclaimers
 
 Interested in contributing to this project? Send a PR with changes and I'd be happy to review! If you're having trouble with this library, be sure to [open an issue][] so that I can look into the problem. Any details that can be provided alongside the problem would be greatly appreciated.
 Thanks!

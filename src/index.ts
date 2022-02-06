@@ -1,9 +1,10 @@
 import { Board } from './Board';
+import { Installable } from './Installable';
 
 export { Board } from './Board';
-
-console.log('Start');
+export { Installable } from './Installable';
 
 export default {
   Board,
+  Installable,
 };
