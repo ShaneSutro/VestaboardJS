@@ -4,18 +4,20 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 export type InstallableClass = {
-  apiKey: string;
-  apiSecret: string;
-  getSubscription: boolean;
+  apiKey?: string;
+  apiSecret?: string;
+  subId?: string;
   saveCredentials: boolean;
+  readCredentials: () => void;
+  requestSubscription: () => void;
 };
 
 export class Installable {
-  apiKey: string;
-  apiSecret: string;
+  apiKey?: string;
+  apiSecret?: string;
   subId?: string;
   saveCredentials: boolean;
-  constructor(apiKey: string, apiSecret: string, saveCredentials = true) {
+  constructor(apiKey?: string, apiSecret?: string, saveCredentials = true) {
     this.apiKey = apiKey;
     this.apiSecret = apiSecret;
     this.saveCredentials = saveCredentials;
