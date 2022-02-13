@@ -14,18 +14,33 @@ export class Installable {
   apiKey: string;
   apiSecret: string;
   subId?: string;
-  getSubscription?: boolean;
-  saveCredentials?: boolean;
-  constructor(apiKey: string, apiSecret: string, getSubscription = true, saveCredentials = true) {
+  saveCredentials: boolean;
+  constructor(apiKey: string, apiSecret: string, saveCredentials = true) {
     this.apiKey = apiKey;
     this.apiSecret = apiSecret;
-    // getSubscription && this.requestSubscription();
+    this.saveCredentials = saveCredentials;
+    if (!this.apiKey || !this.apiSecret || !this.subId) {
+      this.readCredentials();
+    }
   }
 
-  async requestSubscription(): Promise<string> {
+  readCredentials() {
+    try {
+      const creds = fs.readFileSync(`${__dirname}/credentials.txt`, { encoding: 'utf-8' });
+      const [apiKey, apiSecret, subId] = creds.split('\n');
+      this.apiKey = apiKey;
+      this.apiSecret = apiSecret;
+      this.subId = subId;
+    } catch (err) {
+      console.log(`Error reading credentials: ${err}`);
+    }
+  }
+
+  async requestSubscription(saveCredentials = true): Promise<string> {
+    this.saveCredentials = saveCredentials;
     if (!this.apiKey || !this.apiSecret) {
       throw new Error(
-        'There are no keys set. Call Installable() with your installable API key and API secret.',
+        'There are no keys set and credentials file does not exist. Call Installable() with your installable API key and API secret.',
       );
     }
     const headers = {
@@ -53,8 +68,18 @@ export class Installable {
         return allSubIds[0];
       })
       .catch((err) => `Error sending request: ${err}`);
-
+    if (this.subId === subId) {
+      console.warn(
+        'Successfully got your Subscription ID, but the subId returned from the Vestaboard API matches the one in your credentials file, making this .requestSubscription() call unnecessary. To avoid slowing down your application, call .requestSubscription() only when getting or updating your subscription ID.',
+      );
+    }
     this.subId = subId;
+    if (this.saveCredentials) {
+      fs.writeFileSync(
+        `${__dirname}/credentials.txt`,
+        `${this.apiKey}\n${this.apiSecret}\n${this.subId}`,
+      );
+    }
     return subId;
   }
 }
